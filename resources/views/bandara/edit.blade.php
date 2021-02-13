@@ -2,13 +2,14 @@
 
 
 @section('title')
-Tambah Bandara
+Update Bandara
 @endsection
 
 @section('content')
     <div class="col-sm-12">
-        <form method="post" action="{{ url('bandara') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ url('bandara/'.$model->id) }}" enctype="multipart/form-data">
         @csrf
+        <input name="_method" type="hidden" value="PATCH">
         @include('bandara._form')
         </form>
     </div>
